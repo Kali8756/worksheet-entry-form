@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGV Data Entry | Lions Verify</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+    
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .full-width { grid-column: span 2; }
+    .field-heading { font-weight: bold; font-size: 1.1em; color: #0056b3; border-bottom: 1px solid #eee; padding-top: 15px; margin-top: 10px; grid-column: span 2; }
+
+    .form-group { margin-bottom: 5px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; color: #555; }
+    input[type="text"], input[type="email"], input[type="number"], input[type="date"], select { 
+      width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; 
+    }
+    
+    /* Checkbox Styling */
+    .checkbox-group { border: 1px solid #ddd; border-radius: 4px; padding: 10px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .checkbox-item { display: flex; align-items: center; }
+    .checkbox-item input { width: auto; margin-right: 8px; }
+    .checkbox-item label { margin-bottom: 0; font-weight: normal; }
+
+    button { background-color: #28a745; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; margin-top: 20px; }
+    button:disabled { background-color: #aaa; }
+    button:hover:not(:disabled) { background-color: #218838; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Lions Verify - Data Entry</h2>
+  <form id="myForm">
+    <div class="form-grid">
+      
+      <div class="field-heading">Case Details</div>
+      <div class="form-group"><label>Client Name:</label><input name="ClientName" required /></div>
+      <div class="form-group"><label>Entry By:</label>
+        <select name="EntryBy" required>
+          <option value="">Select Entry By</option>
+          <option value="Karuna">Karuna</option>
+          <option value="Garuna">Garuna</option>
+          <option value="Riya">Riya</option>
+          <option value="Shaiju">Shaiju</option>
+          <option value="Satish">Satish</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width"><label>Checks: (Select multiple)</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Global Database"><label>Global Database</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Identity"><label>Identity</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Education"><label>Education</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Digital Address"><label>Digital Address</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Ecourt"><label>Ecourt</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Address"><label>Address</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Employment"><label>Employment</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="UAN"><label>UAN</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Drug Test"><label>Drug Test</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Reference"><label>Reference</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Police Verification"><label>Police Verification</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="Checks" value="Social Media"><label>Social Media</label></div>
+        </div>
+      </div>
+
+      <div class="field-heading">Candidate Info</div>
+      <div class="form-group"><label>Name:</label><input type="text" name="Name" required /></div>
+      <div class="form-group"><label>DOB:</label><input type="date" name="DOB" /></div>
+      <div class="form-group"><label>Father's Name:</label><input type="text" name="FathersName" /></div>
+      <div class="form-group"><label>Mobile No:</label><input type="number" name="MobileNo" /></div>
+      <div class="form-group full-width"><label>Email ID:</label><input type="email" name="EmailID" /></div>
+      
+      <div class="field-heading">Address</div>
+      <div class="form-group full-width"><label>Full Address:</label><input type="text" name="FullAddress" /></div>
+      <div class="form-group"><label>State:</label>
+        <select name="State">
+          <option value="">Select State</option>
+          <option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Dadra & Nagar Haveli & Daman & Diu">Dadra & Nagar Haveli & Daman & Diu</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Ladakh">Ladakh</option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Puducherry">Puducherry</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttarakhand">Uttarakhand</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="West Bengal">West Bengal</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Pincode:</label><input type="text" name="Pincode" /></div>
+
+      <div class="field-heading">Education Details</div>
+      <div class="form-group"><label>University Name:</label><input type="text" name="UniversityName" /></div>
+      <div class="form-group"><label>College Name:</label><input type="text" name="CollegeName" /></div>
+      <div class="form-group"><label>Course:</label><input type="text" name="Course" /></div>
+      <div class="form-group"><label>Roll No.:</label><input type="text" name="RollNo" /></div>
+      <div class="form-group"><label>Seat / Reg No.:</label><input type="text" name="SeatNoRegNo" /></div>
+      <div class="form-group"><label>Pass Out Year:</label><input type="text" name="PassOutYear" /></div>
+
+      <div class="field-heading">Employment Details</div>
+      <div class="form-group"><label>Employment Name:</label><input type="text" name="EmploymentName" /></div>
+      <div class="form-group"><label>Designation:</label><input type="text" name="Designation" /></div>
+      <div class="form-group"><label>Emp Code:</label><input type="text" name="EmpCode" /></div>
+      <div class="form-group"><label>HR Email ID:</label><input type="email" name="HREmailID" /></div>
+      <div class="form-group"><label>HR Mobile No:</label><input type="text" name="HRMobileNo" /></div>
+      <div class="form-group"><label>UAN Number:</label><input type="text" name="UANNumber" /></div>
+
+      <div class="field-heading">ID Details</div>
+      <div class="form-group"><label>Identity Name:</label>
+        <select name="IDName">
+          <option value="">Select ID Type</option>
+          <option value="Aadhar">Aadhar Card</option>
+          <option value="PAN">PAN Card</option>
+          <option value="Voter ID">Voter ID</option>
+          <option value="Passport">DL</option>
+        </select>
+      </div>
+      <div class="form-group"><label>ID Number:</label><input type="text" name="IDNumber" /></div>
+    
+    </div>
+
+    <button type="submit" id="submitBtn">Submit Data</button>
+  </form>
+  
+</div>
+
+<script>
+  const form = document.getElementById('myForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const clientNameInput = document.querySelector('input[name="ClientName"]');
+  const checksInputs = document.querySelectorAll('input[name="Checks"]');
+
+  // 1. Page Load Hone Par: Purana data load karna (Remember Me)
+  window.addEventListener('load', () => {
+    // Client Name
+    const lastClient = localStorage.getItem('lastClientName');
+    if (lastClient) {
+      clientNameInput.value = lastClient;
+    }
+
+    // Checks
+    const lastChecks = JSON.parse(localStorage.getItem('lastChecks'));
+    if (lastChecks && Array.isArray(lastChecks)) {
+      checksInputs.forEach(checkbox => {
+        if (lastChecks.includes(checkbox.value)) {
+          checkbox.checked = true;
+        }
+      });
+    }
+  });
+
+  // 2. Form Submit Hone Par:
+  form.onsubmit = async function(event) {
+    event.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending... please wait";
+
+    // Data collect karne ka naya tareeka
+    const data = new URLSearchParams();
+    
+    // Baaki saare inputs
+    const otherInputs = form.querySelectorAll('input:not([type="checkbox"]), select, textarea');
+    otherInputs.forEach(input => {
+      data.append(input.name, input.value);
+    });
+
+    // Checkboxes ko alag se handle karna (comma-separated)
+    const selectedChecks = Array.from(checksInputs)
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.value)
+      .join(', '); // Comma se join kiya
+      
+    data.append('Checks', selectedChecks);
+
+    // ******************************************************
+    // PASTE YOUR GOOGLE WEB APP URL HERE
+    const url = 'YOUR_WEB_APP_URL_HERE'; 
+    // ******************************************************
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: data
+      });
+      
+      const finalRes = await response.json();
+      
+      if(finalRes.result === 'success'){
+        
+        // 3. Success Hone Par: Data 'localStorage' me save karna
+        localStorage.setItem('lastClientName', clientNameInput.value);
+        localStorage.setItem('lastChecks', JSON.stringify(selectedChecks.split(', ')));
+
+        // 4. Success Popup Dikhana
+        alert('Data Saved Successfully!\nNew Case ID: ' + finalRes.newCaseID + '\n\nReady to fill the next form.');
+        
+        form.reset(); // Form khaali karna
+        
+        // Purana data wapas load karna (Client aur Checks)
+        clientNameInput.value = localStorage.getItem('lastClientName');
+        const lastChecks = JSON.parse(localStorage.getItem('lastChecks'));
+        if (lastChecks) {
+          checksInputs.forEach(checkbox => {
+            checkbox.checked = lastChecks.includes(checkbox.value);
+          });
+        }
+        
+        window.scrollTo(0, 0); // Page ke top par jaana
+        form.querySelector('input[name="Name"]').focus(); // 'Name' field par focus
+
+      } else {
+        alert('Error from Sheet: ' + finalRes.error);
+      }
+
+    } catch (error) {
+      alert('Network Error: ' + error.message);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Submit Data";
+    }
+  };
+</script>
+
+</body>
+</html>
