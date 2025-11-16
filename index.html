@@ -143,6 +143,7 @@
           <option value="PAN">PAN Card</option>
           <option value="Voter ID">Voter ID</option>
           <option value="Passport">DL</option>
+          <option value="Aadhar/PAN">Aadhar / PAN</option>
         </select>
       </div>
       <div class="form-group"><label>ID Number:</label><input type="text" name="IDNumber" /></div>
@@ -159,6 +160,15 @@
   const submitBtn = document.getElementById('submitBtn');
   const clientNameInput = document.querySelector('input[name="ClientName"]');
   const checksInputs = document.querySelectorAll('input[name="Checks"]');
+
+  // --- ENTER KEY PRESS HONE PAR SUBMIT ROKNE KA CODE ---
+  form.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      // Agar 'Enter' key dabi hai, toh default action (submit) ko rok do
+      event.preventDefault();
+    }
+  });
+
 
   // 1. Page Load Hone Par: Purana data load karna (Remember Me)
   window.addEventListener('load', () => {
